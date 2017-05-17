@@ -6,8 +6,8 @@ int main(void)
 {
 	int A = 0;
 	cin >> A;
-	if (A<3 | A>5000)return 0;
-	if (A % 3 == 0 | A % 5 == 0 | A >= 8){
+	if (A<3 || A>5000)return 0;
+	if (A % 3 == 0 || A % 5 == 0 || A >= 8){
 		int quotient = 0;
 		int remainder = 0;
 
