@@ -2,6 +2,8 @@
 #include <list>
 /*논리적인 문제는 없어보이지만 오답처리 됨*/
 /*질문을 작성했음*/
+/*중앙값의 값의 합이 int의 범위를 넘을 수 있음*/
+/*시간초과로 바뀜*/
 using namespace std;
 
 int findCenterValue(int* input, int size);
@@ -11,7 +13,7 @@ int main(void)
 	int N = 0;
 	int K = 0;
 	int input[250000];
-	int sum = 0;
+	long long sum = 0;
 	int centerValue = 0;
 
 	cin >> N;
