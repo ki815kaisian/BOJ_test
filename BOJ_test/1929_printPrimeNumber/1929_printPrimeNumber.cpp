@@ -1,38 +1,28 @@
-#include <iostream>
-#include <math.h>
-//시간초과
+#include <stdio.h>
+
 using namespace std;
 
-int isPrime(int input);
+int number[1000001] = { 0 };
 
 int main(void)
 {
 	int under = 0;
 	int upper = 0;
 
-	cin >> under;
-	cin >> upper;
+	scanf("%d %d", &under, &upper);
+
+	number[0] = number[1] = 1;
+
+	for (int i = 2; i*i <= upper; i++) {
+		if (number[i] == 0) {
+			for (int j = i + i; j <= upper; j += i) {
+				number[j] = 1;
+			}
+		}
+	}
 
 	for (int i = under; i <= upper; i++) {
-		if (isPrime(i)) {
-			cout << i << endl;
-		}
+		if (number[i] == 0)printf("%d\n",i);
 	}
 	return 0;
-}
-
-int isPrime(int input)
-{
-	if (input > 3) {
-		int root;
-		root = (int)sqrt(input);
-		for (int i = 2; i <= root; i++) {
-			if (input%i == 0)return 0;
-		}
-	}
-	else {
-		if (input == 1)return 0;
-		else return 1;
-	}
-	return 1;
 }
